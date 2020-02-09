@@ -1,119 +1,67 @@
-<p>rent-car works!</p>
-<div class="signUpBody">
-    <article class="card-body mx-auto" style="max-width: 400px;">
-      <p class="divider-text">
-        <span class="bg-white" style="font-size: 150%;font-weight: 500" >Create Account</span>
-      </p>
-      <form>
-
-        <div class="form-group input-group">
-          <div class="input-group-prepend">
-              <span class="input-group-text"> <i class="fa fa-font" style="color: black"></i></span>
-          </div>
-          <input 
-            type="text" 
-            id="name"
-            formControlName="name"
-            class="form-control" 
-            placeholder="Fisrt name">
-        </div>
-        <!-- <p 
-          class="alert alert-warning" 
-          *ngIf="!registerForm.get('name').valid && registerForm.get('name').touched">Please enter your first name</p> -->
-        
-        <div class="form-group input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text"> <i class="fa fa-font" style="color: black"></i></span>
-          </div>
-          <input 
-            type="text" 
-            id="lname"
-            formControlName="lname"
-            class="form-control" 
-            placeholder="Last name">
-        </div> <!-- form-group// -->
-        <!-- <p 
-          class="alert alert-warning" 
-          *ngIf="!registerForm.get('lname').valid && registerForm.get('lname').touched">Please enter your last name</p> -->
-
-        <div class="form-group input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text"> <i class="fa fa-envelope" style="color: black"></i> </span>
-          </div>
-          <input 
-            type="text" 
-            id="email"
-            formControlName="email"
-            class="form-control" 
-            placeholder="Email address">
-        </div> <!-- form-group// -->
-        <!-- <p 
-          class="alert alert-warning"
-          *ngIf="!registerForm.get('email').valid && registerForm.get('email').touched">Please enter a valid email</p> -->
-    
-        <div class="form-group input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text"> <i class="fa fa-user" style="color: black"></i> </span>
-          </div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form [formGroup]="rentForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
           <input
             type="text"
-            id="username"
-            formControlName="username"
-            class="form-control"
-            placeholder="Username">
-        </div> <!-- form-group// -->
-        <!-- <p
-          class="alert alert-warning"
-          *ngIf="!registerForm.get('username').valid && registerForm.get('username').touched">Please enter an username</p> -->
-          <div class="form-group row">
-            <label for="example-date-input" class="col-2 col-form-label">Date</label>
-            <div class="col-10">
-              <input class="form-control" type="date" id="example-date-input">
-            </div>
-          </div>
-
-        <div class="form-group input-group" formGroupName="passwords">
-          <div class="form-group input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text"> <i class="fa fa-lock" style="color: black"></i> </span>
-            </div>
-            <input
-              type="password"
-              id="password"
-              formControlName="password"
-              class="form-control"
-              placeholder="Create password">
-          </div> <!-- form-group// -->
-          <!-- <p
-          *ngIf="!registerForm.controls['passwords'].get('password').valid && registerForm.controls['passwords'].get('password').touched"
-          class="alert alert-warning">Please enter a valid password</p> -->
-
-          <div class="form-group input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text"> <i class="fa fa-lock" style="color: black"></i> </span>
-            </div>
-            <input 
-              type="password"
-              id="confirmpassword"
-              formControlName="confirmpassword"
-              class="form-control" 
-              placeholder="Confirm password">
-          </div> <!-- form-group// -->
-          <!-- <p 
-            class="alert alert-warning"
-            *ngIf="!registerForm.controls['passwords'].get('confirmpassword').valid && registerForm.controls['passwords'].get('confirmpassword').touched"
-            >Please enter a valid password</p> -->
+            id="nombre"
+            formControlName="nombre"
+            class="form-control" 
+            [readonly]="nameIsReadonly">
         </div>
-        <!-- <p 
-          class="alert alert-warning" 
-          *ngIf="!registerForm.controls['passwords'].valid  && registerForm.controls['passwords'].get('confirmpassword').touched && registerForm.controls['passwords'].get('confirmpassword').touched">
-          Passwords are not the same!</p> -->
-
+        <span *ngIf="!rentForm.get('nombre').valid && rentForm.get('nombre').touched">Por favor ingresar nombre Válido!</span>
         <div class="form-group">
-            <button type="submit" class="btn btn-black btn-primary btn-block"> Create Account</button>
-        </div> <!-- form-group// -->      
-
-        <p class="message" style="text-align: center;">Have an account? <a routerLink="/SignIn" class="pointer">Sign in</a> </p>                                                                 
-    </form>
-    </article>
+          <label for="apellido">Apellido</label>
+          <input
+            type="text"
+            id="apellido"
+            formControlName="apellido"
+            class="form-control"
+            [readonly]="apellidoIsReadonly">
+        </div>
+        <span *ngIf="!rentForm.get('apellido').valid && rentForm.get('apellido').touched">Por favor ingresar apellido Válido!</span>
+        <div class="form-group">
+          <label for="correo">Correo</label>
+          <input
+            type="text"
+            id="correo"
+            formControlName="correo"
+            class="form-control"
+            [readonly]="correoIsReadonly">
+        </div>
+        <span *ngIf="!rentForm.get('correo').valid && rentForm.get('correo').touched">Por favor ingresar correo Válido!</span>
+        <div class="form-group">
+          <label for="vehiculo">Vehiculo</label>
+          <input 
+            type="text"
+            id="vehiculo"
+            formControlName="vehiculo"
+            class="form-control" 
+            placeholder="Readonly input here...">
+        </div>
+        <span *ngIf="!rentForm.get('vehiculo').valid && rentForm.get('vehiculo').touched">Por favor ingresar vehiculo Válido!</span>
+        <div class="form-group">
+          <label for="recibo-vehiculo" >Fecha de recibo del vehiculo</label>
+            <input
+              type="date" 
+              id="recibo-vehiculo"
+              formControlName="recibo-vehiculo"
+              class="form-control">
+        </div>
+        <span *ngIf="!rentForm.get('recibo-vehiculo').valid && rentForm.get('recibo-vehiculo').touched">Por favor ingresar fecha de recibo del vehiculo!</span>
+        <div class="form-group">
+          <label for="entrega-vehiculo" >Fecha de entrega del vehiculo</label>
+            <input
+              type="date" 
+              id="entrega-vehiculo"
+              formControlName="entrega-vehiculo"
+              class="form-control">
+        </div>
+        <span *ngIf="!rentForm.get('entrega-vehiculo').valid && rentForm.get('entrega-vehiculo').touched">Por favor ingresar fecha de entrega del vehiculo!</span>
+        <button class="btn btn-primary" type="submit" [disabled]="!rentForm.valid">Alquilar</button>
+      </form>
+    </div>
+  </div>
 </div>

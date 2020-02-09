@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { RentCarComponent } from './rent-car/rent-car.component';
 import { HistoryComponent } from './history/history.component';
 import {Routes, RouterModule, Router} from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   {path: '', component: CarListComponent},
@@ -32,7 +33,8 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

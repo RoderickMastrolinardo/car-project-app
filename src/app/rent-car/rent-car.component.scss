@@ -1,57 +1,11 @@
-.signUpBody{
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-    align-items: center;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    background-color: #ffffff;
-    height: 100%;
-}
-.pointer {
-    border-bottom: 1px;
-    color: black;
-    cursor: pointer;
-}
-.btn-black{
-    background-color: black;
-    color: white;
-}
-.message{
-    color: grey;
-    margin-right: 2px;
-}
-.valid-feedback.feedback-icon,
-.invalid-feedback.feedback-icon {
-    position: absolute;
-    width: auto;
-    bottom: 10px;
-    right: 10px;
-    margin-top: 0;
-}
-.login-logo {
-    width: 100%;
-    height: auto;
+.container {
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
   }
-.divider-text {
-    position: relative;
-    text-align: center;
-    margin-top: 15px;
-    margin-bottom: 15px;
+span{
+  color: red;
 }
-
-.divider-text span {
-    padding: 7px;
-    font-size: 12px;
-    position: relative;   
-    z-index: 2;
-}
-.divider-text:after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    border-bottom: 1px solid #ddd;
-    top: 55%;
-    left: 0;
-    z-index: 1;
+input.ng-invalid.ng-touched{
+  border: 1px solid red;
 }
