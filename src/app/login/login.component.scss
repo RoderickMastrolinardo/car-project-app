@@ -9,3 +9,18 @@ span, p{
 input.ng-invalid.ng-touched{
   border: 1px solid red;
 }
+.divider-text {
+  padding: 7px;
+  font-size: 12px;
+  position: relative;   
+  z-index: 2;
+}
+.center{
+  margin-top: 5px;
+  text-align: center;
+}
+.pointer {
+  border-bottom: 1px;
+  color:blue($color: #000000);
+  cursor: pointer;
+}

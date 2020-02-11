@@ -9,7 +9,8 @@
             id="nombre"
             formControlName="nombre"
             class="form-control" 
-            [readonly]="nameIsReadonly">
+            [(ngModel)]="nombre"
+            readonly>
         </div>
         <span *ngIf="!rentForm.get('nombre').valid && rentForm.get('nombre').touched">Por favor ingresar nombre Válido!</span>
         <div class="form-group">
@@ -19,7 +20,8 @@
             id="correo"
             formControlName="correo"
             class="form-control"
-            [readonly]="correoIsReadonly">
+            [(ngModel)]="correo"
+            readonly>
         </div>
         <span *ngIf="!rentForm.get('correo').valid && rentForm.get('correo').touched">Por favor ingresar correo Válido!</span>
         <div class="form-group">
@@ -34,23 +36,23 @@
         </div>
         <span *ngIf="!rentForm.get('vehiculo').valid && rentForm.get('vehiculo').touched">Por favor ingresar vehiculo Válido!</span>
         <div class="form-group">
-          <label for="recibo-vehiculo" >Fecha de recibo del vehiculo</label>
+          <label for="reciboVehiculo" >Fecha de recibo del vehiculo</label>
             <input
               type="date" 
-              id="recibo-vehiculo"
-              formControlName="recibo-vehiculo"
+              id="reciboVehiculo"
+              formControlName="reciboVehiculo"
               class="form-control">
         </div>
-        <span *ngIf="!rentForm.get('recibo-vehiculo').valid && rentForm.get('recibo-vehiculo').touched">Por favor ingresar fecha de recibo del vehiculo!</span>
+        <span *ngIf="!rentForm.get('reciboVehiculo').valid && rentForm.get('reciboVehiculo').touched">Por favor ingresar fecha de recibo del vehiculo!</span>
         <div class="form-group">
-          <label for="entrega-vehiculo" >Fecha de entrega del vehiculo</label>
+          <label for="entregaVehiculo" >Fecha de entrega del vehiculo</label>
             <input
               type="date" 
-              id="entrega-vehiculo"
-              formControlName="entrega-vehiculo"
+              id="entregaVehiculo"
+              formControlName="entregaVehiculo"
               class="form-control">
         </div>
-        <span *ngIf="!rentForm.get('entrega-vehiculo').valid && rentForm.get('entrega-vehiculo').touched">Por favor ingresar fecha de entrega del vehiculo!</span>
+        <span *ngIf="!rentForm.get('entregaVehiculo').valid && rentForm.get('entregaVehiculo').touched">Por favor ingresar fecha de entrega del vehiculo!</span>
         <button class="btn btn-primary" type="submit" >Alquilar</button>
       </form>
     </div>

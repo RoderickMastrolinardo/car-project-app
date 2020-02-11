@@ -35,8 +35,6 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log(this.registerForm.value);
-    console.log(this.user);
     this.user.nombre = this.registerForm.get('nombre').value;
     this.user.apellido = this.registerForm.get('apellido').value;
     this.user.correo = this.registerForm.get('correo').value;

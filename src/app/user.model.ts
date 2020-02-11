@@ -10,4 +10,4 @@ export class UserModel {
         this.correo = correo;
         this.password = password;
     }
-  }
+}

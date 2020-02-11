@@ -9,3 +9,9 @@ span, p{
 input.ng-invalid.ng-touched{
   border: 1px solid red;
 }
+.divider-text {
+  padding: 7px;
+  font-size: 12px;
+  position: relative;   
+  z-index: 2;
+}

@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class CarListComponent implements OnInit {
 
-  cars: Observable<any[]>
+  cars: Observable<any[]>;
 
   constructor(public db: AngularFireDatabase) {
     this.cars = db.list('/Carros').valueChanges();

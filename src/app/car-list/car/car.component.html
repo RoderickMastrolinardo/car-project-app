@@ -1,9 +1,8 @@
-<div class="card" style="width: 20rem;">
+<div class="card" style="width: 20rem, height: 60rem;">
     <img class="card-img-top car" [src]="car.imagePath" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">{{car.carModelName}}</h5>
       <p class="card-text">{{car.description}}</p>
-      <p class="card-text">Disponibles: {{car.available}}</p>
-      <a (click)="onAlquilar()" class="btn btn-primary">Alquilar</a>
+      <a (click)="onAlquilar()" class="btn btn-primary" style="color: white;">Alquilar</a>
     </div>
   </div>
