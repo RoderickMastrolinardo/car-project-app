@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { CarModel } from './car.model'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-car',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarComponent implements OnInit {
 
-  constructor() { }
+  @Input() car: CarModel;
+
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+    console.log(this.car);
+  }
+  onAlquilar(){
+    this.router.navigate(['/rent'], {state: {data: {carname: this.car.carModelName}}});
   }
 
 }

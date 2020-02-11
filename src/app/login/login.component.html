@@ -1,1 +1,30 @@
-<p>login works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-3 col-md-offset-3">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="correo">Correo</label>
+                    <input
+                        type="text"
+                        id="correo"
+                        formControlName="correo"
+                        class="form-control">
+                </div>
+                <span *ngIf="!loginForm.get('correo').valid && loginForm.get('correo').touched">Por favor ingresar correo Válido!</span>
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input
+                        type="password"
+                        id="password"
+                        formControlName="password"
+                        class="form-control">
+                </div>
+                <span *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched">
+                    Porfavor ingrese contraseña
+                </span>
+                <p></p>
+                <button class="btn btn-primary" [disabled]="!loginForm.valid" type="submit" >Iniciar Sesión</button>
+            </form>
+        </div>
+    </div>
+</div>

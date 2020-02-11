@@ -1,1 +1,62 @@
-<p>register works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input
+                        type="text"
+                        id="nombre"
+                        formControlName="nombre"
+                        class="form-control">
+                </div>
+                <span *ngIf="!registerForm.get('nombre').valid && registerForm.get('nombre').touched">Por favor ingresar nombre Válido!</span>
+                <div class="form-group">
+                    <label for="apellido">Apellido</label>
+                    <input
+                        type="text"
+                        id="apellido"
+                        formControlName="apellido"
+                        class="form-control">
+                </div>
+                <span *ngIf="!registerForm.get('apellido').valid && registerForm.get('apellido').touched">Por favor ingresar apellido Válido!</  span>
+                <div class="form-group">
+                    <label for="correo">Correo</label>
+                    <input
+                        type="text"
+                        id="correo"
+                        formControlName="correo"
+                        class="form-control">
+                </div>
+                <span *ngIf="!registerForm.get('correo').valid && registerForm.get('correo').touched">Por favor ingresar correo Válido!</span>
+                <div class="form-group" formGroupName="passwords">
+                    <div class="form-group">
+                        <label for="password">Contraseña</label>
+                        <input
+                            type="password"
+                            id="password"
+                            formControlName="password"
+                            class="form-control">
+                    </div>
+                    <span *ngIf="!registerForm.controls['passwords'].get('password').valid && registerForm.controls['passwords'].get('password').touched">
+                        Porfavor ingrese contraseña Valida</span>
+                    <div class="form-group">
+                        <label for="confirmpassword">Repita Contraseña</label>
+                        <input
+                            type="password"
+                            id="confirmpassword"
+                            formControlName="confirmpassword"
+                            class="form-control">
+                    </div>
+                    <span *ngIf="!registerForm.controls['passwords'].get('confirmpassword').valid && registerForm.controls['passwords'].get('confirmpassword').touched">
+                        Porfavor ingrese contraseña Valida
+                    </span>
+                </div>
+                <p *ngIf="!registerForm.controls['passwords'].valid  && registerForm.controls['passwords'].get('confirmpassword').touched && registerForm.controls['passwords'].get('confirmpassword').touched">
+                    las contraseñas tienen que ser iguales!
+                </p>
+                <button class="btn btn-primary" [disabled]="!registerForm.valid" type="submit" >Crear Usuario</button>
+            </form>
+        </div>
+    </div>
+</div>

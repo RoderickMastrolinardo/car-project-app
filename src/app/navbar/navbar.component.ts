@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { User } from 'firebase';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  user$: Observable<User>;
+  displayName: string;
 
-  ngOnInit(): void {
+  constructor(private authService: AuthenticationService) { 
+    this.user$ = this.authService.user$;
+    this.user$.subscribe(res => {
+      if (res != null){
+        this.displayName = res.displayName;
+      }
+   });
   }
+  ngOnInit(): void { }
 
+  signOut(){
+    this.authService.SignOut();
+  }
 }

@@ -11,22 +11,22 @@
           <a class="nav-link" routerLink="/">Cars</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" routerLink="/history">History</a>
+            <a *ngIf="user$ | async" class="nav-link" routerLink="/history">History</a>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="nav-item">
-            <a class="nav-link" routerLink="/register">Register</a>
+            <a *ngIf="!(user$ | async)" class="nav-link" routerLink="/register">Register</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" routerLink="/signIn">Sign in</a>
+            <a *ngIf="!(user$ | async)" class="nav-link" routerLink="/signIn">Sign in</a>
         </li>
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              "colocar username"
+            <a *ngIf="user$ | async" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              {{displayName}}
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" routerLink="/">Sign out</a>
+              <a class="dropdown-item" (click)="signOut()">Sign out</a>
               <!-- <a class="dropdown-item" href="#">Another action</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Something else here</a> -->

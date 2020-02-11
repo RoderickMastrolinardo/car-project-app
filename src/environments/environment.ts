@@ -3,7 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: "AIzaSyBxVXfm4UxqeIublWl5atCDPBSS-Vt0-Ns",
+    authDomain: "car-rental-6322e.firebaseapp.com",
+    databaseURL: "https://car-rental-6322e.firebaseio.com",
+    projectId: "car-rental-6322e",
+    storageBucket: "car-rental-6322e.appspot.com",
+    messagingSenderId: "778429091624",
+    appId: "1:778429091624:web:4a28dee071e55472ddca1d",
+    measurementId: "G-0GZB0SBL8Y"
+  }
 };
 
 /*

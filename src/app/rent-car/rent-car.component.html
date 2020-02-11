@@ -13,16 +13,6 @@
         </div>
         <span *ngIf="!rentForm.get('nombre').valid && rentForm.get('nombre').touched">Por favor ingresar nombre Válido!</span>
         <div class="form-group">
-          <label for="apellido">Apellido</label>
-          <input
-            type="text"
-            id="apellido"
-            formControlName="apellido"
-            class="form-control"
-            [readonly]="apellidoIsReadonly">
-        </div>
-        <span *ngIf="!rentForm.get('apellido').valid && rentForm.get('apellido').touched">Por favor ingresar apellido Válido!</span>
-        <div class="form-group">
           <label for="correo">Correo</label>
           <input
             type="text"
@@ -33,13 +23,14 @@
         </div>
         <span *ngIf="!rentForm.get('correo').valid && rentForm.get('correo').touched">Por favor ingresar correo Válido!</span>
         <div class="form-group">
-          <label for="vehiculo">Vehiculo</label>
+          <label for="vehiculo">vehiculo</label>
           <input 
             type="text"
             id="vehiculo"
             formControlName="vehiculo"
             class="form-control" 
-            placeholder="Readonly input here...">
+            [(ngModel)]="carName.carname"
+            readonly>
         </div>
         <span *ngIf="!rentForm.get('vehiculo').valid && rentForm.get('vehiculo').touched">Por favor ingresar vehiculo Válido!</span>
         <div class="form-group">
@@ -60,7 +51,7 @@
               class="form-control">
         </div>
         <span *ngIf="!rentForm.get('entrega-vehiculo').valid && rentForm.get('entrega-vehiculo').touched">Por favor ingresar fecha de entrega del vehiculo!</span>
-        <button class="btn btn-primary" type="submit" [disabled]="!rentForm.valid">Alquilar</button>
+        <button class="btn btn-primary" type="submit" >Alquilar</button>
       </form>
     </div>
   </div>
